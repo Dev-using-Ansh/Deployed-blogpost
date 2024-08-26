@@ -1,0 +1,48 @@
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="single-blog">
+      <h1 class="blog-title">
+        <%= blog.title %>
+        <div class="blog-icons">
+          <a class="back-link" href="/blogs" title="Go back to the blog list">
+            <i class="fas fa-arrow-circle-left"></i>
+          </a>
+          <button
+            id="delete-button"
+            data-docid="<%= blog.id %>"
+            title="Delete Blog" >
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </h1>
+      <p class="blog-author">By <%= blog.author %> on <%= blog.updatedAt %></p>
+      <p class="blog-summary"><b>Summary: </b> <%= blog.summary %></p>
+      <div class="blog-content">
+        <p><%- blog.content %></p>
+      </div>
+    </div>
+
+    <%- include("../partials/footer.ejs") %>
+    <script>
+      const deleteButton = document.getElementById("delete-button");
+      deleteButton.addEventListener("click", async () => {
+        const deleteEndpoint = `/blogs/id/${deleteButton.dataset.docid}`;
+        console.log(`deleteEndpoint: ${deleteEndpoint}`);
+        const response = await fetch(deleteEndpoint, {
+          method: "DELETE",
+        });
+        if (response.ok) {
+          responseContent = await response.json();
+          console.log(response);
+          window.location.href = responseContent.redirect;
+        } else {
+          alert("Failed to delete blog");
+        }
+      });
+    </script>
+  </body>
+</html>

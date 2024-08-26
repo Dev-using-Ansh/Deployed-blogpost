@@ -1,0 +1,535 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Navigation Styles */
+nav {
+  background: #444;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .site-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2vh;
+}
+
+nav .site-title a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav .site-title h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav .site-title p {
+  margin: 0;
+  font-size: 14px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background: #555;
+}
+
+/* Content Styles */
+.blogs.content {
+  background: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blogs.content h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.blogs.content p {
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Content Styles */
+section {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 0;
+}
+
+article {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  border-left: 3px solid #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+  font-size: 24px;
+  color: #444;
+  margin: 0 0 10px;
+}
+
+article p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Refresh Button Styles */
+.blog-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin: 0 20px; */
+}
+#refresh-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+#refresh-button svg {
+  width: 30px;
+  height: 30px;
+  fill: #007bff;
+  transition: fill 0.3s ease;
+}
+#refresh-button:hover svg {
+  fill: #0056b3;
+}
+#refresh-button:active svg {
+  fill: #003f7f;
+}
+
+/* Create Blog Styles */
+.create-blog {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-blog form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-blog label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.create-blog input,
+.create-blog textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.create-blog button {
+  padding: 10px 15px;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.create-blog button:hover {
+  background: #555;
+}
+
+/* Error Page Styles */
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items at the top */
+  padding-top: 20px; /* Add some padding from the top */
+}
+
+.not-found {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.not-found.content {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+/* Single Blog Page Styles */
+.single-blog {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+  padding-bottom: 10px; /* Add padding to create space between text and border */
+  border-bottom: 2px solid #ddd; /* Add bottom border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.blog-icons a,
+.blog-icons button {
+  margin-left: 10px;
+}
+
+.blog-icons i {
+  font-size: 1.2em;
+}
+
+.blog-summary {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  display: block; /* Ensure it takes up the full width */
+}
+
+.blog-author {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+  text-align: right; /* Align text to the right */
+  display: block; /* Ensure it takes up the full width */
+}
+
+.blog-list {
+  padding: 20px;
+}
+
+.blog-post {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.blog-author {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.blog-summary {
+  font-size: 1em;
+  color: #333;
+}
+
+.blog-content {
+  line-height: 1.6;
+  color: #666;
+  text-align: justify;
+}
+
+.blog-content p {
+  margin-bottom: 20px;
+}
+
+.back-link {
+  display: inline-flex; /* Align icon and text */
+  align-items: center; /* Vertically center icon and text */
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Link color */
+}
+
+.back-link i {
+  margin-right: 5px; /* Space between icon and text */
+  font-size: 1em; /* Increase icon size */
+}
+
+/* Tooltip styling */
+.back-link::after {
+  content: attr(title); /* Use the title attribute for the tooltip text */
+  position: absolute;
+  bottom: 120%; /* Position above the link */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap; /* Prevent text wrapping */
+  opacity: 0; /* Hide tooltip by default */
+  transition: opacity 0.3s; /* Fade-in effect */
+  pointer-events: none; /* Prevent mouse events */
+}
+
+.back-link:hover::after {
+  opacity: 1; /* Show tooltip on hover */
+}
+
+#delete-button {
+  position: relative; /* Required for tooltip positioning */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 0; /* Remove padding */
+  float: right; /* Move button to the right */
+}
+
+#delete-button i {
+  font-size: 20px; /* Adjust icon size */
+  color: #ff4d4d; /* Icon color */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+#delete-button:hover i {
+  color: #ff1a1a; /* Darker red on hover */
+}
+
+#delete-button:active i {
+  color: #e60000; /* Even darker red on click */
+}
+
+/* Tooltip styling */
+#delete-button::after {
+  content: attr(title); /* Use the title attribute for the tooltip text */
+  position: absolute;
+  bottom: 120%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+}
+
+#delete-button:hover::after {
+  opacity: 1; /* Show tooltip on hover */
+}
+
+/* Success Message Styles */
+.success-message {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #dff0d8;
+  border: 1px solid #d6e9c6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.success-message h1 {
+  color: #3c763d;
+  margin-bottom: 20px;
+}
+
+.success-message p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.success-message a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #5cb85c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.success-message a:hover {
+  background: #4cae4c;
+}
+
+/* Failure Message Styles */
+.fail-message {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f2dede;
+  border: 1px solid #ebccd1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.fail-message h1 {
+  color: #a94442;
+  margin-bottom: 20px;
+}
+
+.fail-message p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.fail-message a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.fail-message a:hover {
+  background: #c9302c;
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* CSS for login signup */
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+/* Form container styling */
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Input styling */
+input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styling */
+.error {
+  color: #ff0000;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+

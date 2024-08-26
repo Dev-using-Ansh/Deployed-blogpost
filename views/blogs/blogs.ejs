@@ -1,0 +1,36 @@
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/nav.ejs") %>
+
+    <section class="blog-list">
+      <div class="blog-list-header">
+        <h2>All Blogposts</h2>
+        <button id="refresh-button" title="Refresh Page">
+          <i class="fas fa-sync-alt fa-2x"></i>
+        </button>
+      </div>
+      <% if (blogs.length > 0) { %> <% blogs.forEach(post => { %>
+      <article class="blog-post">
+        <a href="/blogs/id/<%= post.id %>" class="blog-link">
+          <h3 class="blog-title"><%= post.title %></h3>
+          <p class="blog-author"><%= post.author %></p>
+          <p class="blog-summary"><%= post.summary %></p>
+        </a>
+      </article>
+      <% }) %> <% } else { %>
+      <p>No blogs have been found.</p>
+      <% } %>
+    </section>
+
+    <%- include("../partials/footer.ejs") %>
+    <script>
+      document
+        .getElementById("refresh-button")
+        .addEventListener("click", () => {
+          location.reload();
+        });
+    </script>
+  </body>
+</html>
