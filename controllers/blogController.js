@@ -7,7 +7,9 @@ const BlogPost = require('../models/blogpost');
 
 // blog_index_get
 const blog_index_get = (req, res) => {
-    BlogPost.find().sort({ createdAt: -1 })
+    const userEmailFromDb = res.locals.user.email;
+    console.log(userEmailFromDb);
+    BlogPost.find({author: userEmailFromDb}).sort({ createdAt: -1 })
         .then((result) => {
             res.render('blogs/blogs', { title: 'All blogs', blogs: result });
         })
@@ -32,7 +34,15 @@ const blog_id_get = (req, res) => {
 
 // blog_create_post
 const blog_create_post = (req, res) => {
-    const blog = req.body;
+    // const userIdFromDb = res.locals.user.id;
+    const userEmailFromDb = res.locals.user.email;
+    const blog = {
+        title : req.body.title,
+        content :  req.body.content,
+        summary :  req.body.summary,
+        // author : userIdFromDb
+        author: userEmailFromDb
+    };
     // Create a new blog post using the BlogPost static method
     BlogPost.create(blog)
         .then((result) => {

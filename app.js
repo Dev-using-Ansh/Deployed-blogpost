@@ -5,11 +5,12 @@ const blogpostRoutes = require('./routes/blogRoutes');
 const authRoutes = require('./routes/auth/authRoutes');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-
+require("dotenv").config();
 // CONSTANTS
-const USER_NAME = 'anshkg';
-const PASSWORD = 'kg7983';
-const DB_NAME = 'mernDB'; // TODO: Change this to your database name
+const USER_NAME = process.env.USER_NAME;
+const PASSWORD = process.env.PASSWORD;
+const DB_NAME = process.env.DB_NAME; 
+// TODO: Change this to your database name
 const DB_URI = `mongodb+srv://${USER_NAME}:${PASSWORD}@cluster0.7ehonii.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
 const PORT = 3040;
 
@@ -57,7 +58,7 @@ function checkUser(req, res, next) {
                 res.locals.user = decodedToken; // {email: "email"}
             }
         });
-    } else {
+    } else {``
         res.locals.user = null;
     }
     next();
