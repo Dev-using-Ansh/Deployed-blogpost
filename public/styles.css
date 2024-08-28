@@ -532,4 +532,16 @@ button:hover {
   margin-bottom: 15px;
   text-align: center;
 }
-
+@media screen and (max-width:412px) {
+  nav{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+  nav ul li{
+    margin: 0 1px;
+  }
+  nav .site-title {
+    margin-left: 150px;
+  }
+}
