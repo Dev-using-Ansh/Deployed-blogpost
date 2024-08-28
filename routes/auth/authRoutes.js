@@ -174,7 +174,7 @@ router.post('/signup', (req, res) => {
         console.log("Create successfully");
         const token = getToken(user.email, user.name, user._id);
         res.cookie('authtoken', token, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000 });
-        res.redirect('/blogs');
+        res.redirect('/');
     }).catch(err =>{
         console.log("There is a error", err);
         res.redirect('/auth/signup?error=Error creating user');
@@ -212,7 +212,7 @@ router.post('/login', (req, res) => {
                         // Create a token and send it back as a cookie
                         const token = getToken(user.email, user.name, user._id);
                         res.cookie('authtoken', token, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000 });
-                        res.redirect('/blogs'); 
+                        res.redirect('/'); 
                     }
                 })
             }

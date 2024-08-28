@@ -539,7 +539,11 @@ button:hover {
     flex-wrap: wrap;
   }
   nav ul li{
-    margin: 0 1px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  nav ul {
+    margin: 0px auto;
   }
   nav .site-title {
     margin-left: 150px;
